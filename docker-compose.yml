@@ -1,0 +1,20 @@
+version: '3'
+services:
+  atlas:
+    image: nargiza/apache-atlas
+    container_name: atlas
+    command: /opt/apache-atlas-2.1.0/bin/atlas_start.py
+    ports:
+      - 21000:21000
+  elasticsearch:
+    image: elasticsearch:7.2.1
+    container_name: elasticsearch
+    environment:
+      - discovery.type=single-node
+    ports:
+      - 9200:9200
+  kibana:
+    image: kibana:7.2.1
+    container_name: kibana
+    ports:
+      - 5601:5601
