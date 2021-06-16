@@ -1,0 +1,36 @@
+--- atlas-application.properties	2021-06-16 14:26:10.000000000 -0400
++++ atlas-application.properties	2021-06-16 14:27:28.000000000 -0400
+@@ -80,22 +80,26 @@
+
+
+ # Graph Search Index
+-atlas.graph.index.search.backend=solr
++atlas.graph.index.search.backend=elasticsearch
+
+ #Solr
+ #Solr cloud mode properties
+-atlas.graph.index.search.solr.mode=cloud
+-atlas.graph.index.search.solr.zookeeper-url=localhost:2181
+-atlas.graph.index.search.solr.zookeeper-connect-timeout=60000
+-atlas.graph.index.search.solr.zookeeper-session-timeout=60000
+-atlas.graph.index.search.solr.wait-searcher=true
++#atlas.graph.index.search.solr.mode=cloud
++#atlas.graph.index.search.solr.zookeeper-url=localhost:2181
++#atlas.graph.index.search.solr.zookeeper-connect-timeout=60000
++#atlas.graph.index.search.solr.zookeeper-session-timeout=60000
++#atlas.graph.index.search.solr.wait-searcher=true
+
+ #Solr http mode properties
+ #atlas.graph.index.search.solr.mode=http
+ #atlas.graph.index.search.solr.http-urls=http://localhost:8983/solr
+
+ # Solr-specific configuration property
+-atlas.graph.index.search.max-result-set-size=150
++#atlas.graph.index.search.max-result-set-size=150
++
++# Elasticsearch
++atlas.graph.index.search.hostname=elasticsearch:9200
++atlas.graph.index.search.elasticsearch.client-only=true
+
+ #########  Import Configs  #########
+ #atlas.import.temp.directory=/temp/import

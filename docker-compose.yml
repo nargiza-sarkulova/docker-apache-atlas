@@ -6,6 +6,8 @@ services:
     command: /opt/apache-atlas-2.1.0/bin/atlas_start.py
     ports:
       - 21000:21000
+    depends_on:
+      - elasticsearch
   elasticsearch:
     image: elasticsearch:7.2.1
     container_name: elasticsearch

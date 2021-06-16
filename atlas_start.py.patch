@@ -1,0 +1,18 @@
+--- atlas_start.py  2021-06-16 14:54:27.000000000 -0400
++++ atlas_start.py  2021-06-16 14:54:51.000000000 -0400
+@@ -17,6 +17,7 @@
+ # limitations under the License.
+ import os
+ import sys
++import time
+ import traceback
+
+ import atlas_config as mc
+@@ -166,4 +167,7 @@
+         print traceback.format_exc()
+         returncode = -1
+
++    while True:
++        time.sleep(1)
++
+     sys.exit(returncode)
