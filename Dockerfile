@@ -32,6 +32,6 @@ RUN cd /opt/apache-atlas-${ATLAS_VERSION}/ && ./bin/atlas_start.py
 RUN cd /opt/apache-atlas-${ATLAS_VERSION}/server/webapp/atlas/WEB-INF/lib/ && rm elasticsearch-rest-client-5.6.4.jar elasticsearch-rest-high-level-client-${ES_OLD_VERSION}.jar
 RUN cd /opt/apache-atlas-${ATLAS_VERSION}/server/webapp/atlas/WEB-INF/lib/ && wget https://repo1.maven.org/maven2/org/elasticsearch/client/elasticsearch-rest-client/${ES_NEW_VERSION}/elasticsearch-rest-client-${ES_NEW_VERSION}.jar
 
-COPY atlas_start.py.patch /opt/apache-atlas-${ATLAS_VERSION}/bin/
-RUN cd /opt/apache-atlas-${ATLAS_VERSION}/bin/ \
-&& patch -b -f < atlas_start.py.patch
+COPY entrypoint.sh /opt
+RUN chmod +x /opt/entrypoint.sh
+CMD /opt/entrypoint.sh
