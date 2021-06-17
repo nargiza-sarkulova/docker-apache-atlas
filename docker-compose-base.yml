@@ -1,14 +1,15 @@
 version: '3'
 services:
   atlas:
-    image: nargiza/apache-atlas-initialized
+    image: nargiza/apache-atlas
     container_name: atlas
+    command: ./opt/entrypoint.sh
     ports:
       - 21000:21000
     depends_on:
       - elasticsearch
   elasticsearch:
-    image: nargiza/apache-atlas-elasticsearch-initialized
+    image: elasticsearch:7.2.1
     container_name: elasticsearch
     environment:
       - discovery.type=single-node
