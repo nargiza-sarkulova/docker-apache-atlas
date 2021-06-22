@@ -1,7 +1,7 @@
 FROM openjdk:8
 ARG ATLAS_VERSION=2.1.0
 ARG ES_OLD_VERSION=5.6.4
-ARG ES_NEW_VERSION=2.1.0
+ARG ES_NEW_VERSION=7.2.1
 
 RUN apt update \
 && apt -y install maven patch \
